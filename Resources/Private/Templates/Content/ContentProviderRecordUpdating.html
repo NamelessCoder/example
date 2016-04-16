@@ -1,0 +1,40 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Configuration">
+	<flux:form id="contentproviderrecordupdating">
+		<flux:form.option name="group">Flux Examples</flux:form.option>
+		<flux:field.custom name="help">
+			<div class="alert alert-info">
+				<h2>Content Provider: Record Updating</h2>
+				<p>
+					When you save this element the values of the three fields below are concatenated
+					and copied as value of the "subheader" field (which you should see above).
+				</p>
+				<p>
+					This happens because a custom Content Provider class has been registered with
+					Flux and is configured to trigger only on this specific content type.
+				</p>
+				<p>
+					See <code>\FluidTYPO3\Example\Provider\ConcatenatingContentProvider</code> for
+					further information.
+				</p>
+			</div>
+		</flux:field.custom>
+		<flux:field.input name="compound.0" />
+		<flux:field.input name="compound.1" />
+		<flux:field.input name="compound.2" />
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<h4>Flux Example: Record Updating</h4>
+	<p>Edit me to see example</p>
+	<code>EXT:example/Resources/Private/Templates/Content/ContentProviderRecordUpdating.html</code>
+</f:section>
+
+<f:section name="Main">
+	<h4>Flux Example: Record Updating</h4>
+	<p>Edit me in the backend to see example.</p>
+</f:section>

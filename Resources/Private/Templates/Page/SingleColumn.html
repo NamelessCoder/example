@@ -1,0 +1,57 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Configuration">
+	<flux:form id="singlecolumnpage">
+		<flux:form.option name="sorting">0</flux:form.option>
+		<flux:field.custom name="help">
+			<div class="alert alert-danger">
+				Save and close page properties to edit content elements.
+			</div>
+		</flux:field.custom>
+	</flux:form>
+
+	<!--
+	Grid definition: defines a table-like structure of cells into which content can be inserted.
+	This structure is the simplest possible with a single column (colPos=0). The structure is
+	defined in this extended format for demonstration purposes - it is possible to replace the
+	entire `flux:grid` below with a `flux:form.content` ViewHelper. Internally this ViewHelper
+	will create exactly the same structure as seen below with one row and one column but without
+	the possibility to add further rows and columns; when that's needed always use `flux:grid`.
+	-->
+	<flux:grid>
+		<flux:grid.row>
+			<flux:grid.column colPos="0" />
+		</flux:grid.row>
+	</flux:grid>
+</f:section>
+
+<f:section name="Preview">
+	<!--
+	Preview section, page template. Any content here is displayed above the page columns when
+	editing page content. You can use this section to display for example the properties saved
+	on each page to make them very visible to editors
+	-->
+	<div class="alert alert-info">
+		<h3>Page template selected</h3>
+		<p>
+			You've selected the page template <code>EXT:example/Resources/Private/Templates/Page/SingleColumn.html</code>.
+			This page template contains a single content column and has a simple multi-level menu and content output in FE.
+		</p>
+		<p>
+			The definition of available content columns is embedded in this template file. View/edit the file and study the
+			inline comments for more detail.
+		</p>
+	</div>
+</f:section>
+
+<f:section name="Main">
+	<div id="menu">
+		<v:page.menu levels="3" expandAll="1" entryLevel="0" />
+	</div>
+	<div id="content">
+		<v:content.render column="0" />
+	</div>
+</f:section>

@@ -1,0 +1,12 @@
+.idea
+vendor
+build
+src
+composer.lock
+uploads
+typo3temp
+typo3conf
+typo3_src
+typo3
+index.php
+fileadmin

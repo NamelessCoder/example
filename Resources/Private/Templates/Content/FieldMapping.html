@@ -1,0 +1,42 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Configuration">
+	<flux:form id="fieldmapping">
+		<flux:form.option name="group">Flux Examples</flux:form.option>
+		<flux:field.custom name="help">
+			<div class="alert alert-info">
+				<h2>Form field mapping</h2>
+				<p>
+					This element contains an example of mapping Flux form fields to records' fields.
+					When you save this element the value of the field below gets saved into the "subheader"
+					record property (which you should see just above this text).
+				</p>
+				<p>
+					This happens because the field is named <code>tt_content.subheader</code> in the Flux
+					field definition - the prefix matches the table name and the field matches the column
+					name so internally Flux will copy this value.
+				</p>
+				<p>
+					This approach only supports simple field value copying (and can also update fields
+					which are not shown as long as the user may change them). For an example about how
+					to manipulate values with more control see the "ContentProvider: Record Updating"
+					example element.
+				</p>
+			</div>
+		</flux:field.custom>
+		<flux:field.input name="tt_content.subheader" />
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<h4>Form field mapping</h4>
+	<p>Edit me to see example</p>
+	<code>EXT:example/Resources/Private/Templates/Content/FieldMapping.html</code>
+</f:section>
+
+<f:section name="Main">
+	<h4>Form field mapping</h4>
+	<p>Edit me in the backend to see example.</p>
+</f:section>

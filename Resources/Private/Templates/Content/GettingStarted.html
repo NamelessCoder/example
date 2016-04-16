@@ -1,0 +1,76 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Configuration">
+	<flux:form id="gettingstarted">
+		<flux:form.option name="group">Help</flux:form.option>
+		<flux:form.option name="sorting">0</flux:form.option>
+		<flux:field.custom name="help">
+			<div class="alert alert-danger">
+				Save and close this element to view the help text.
+			</div>
+		</flux:field.custom>
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<div class="alert alert-success">
+		<h3>FluidTYPO3: Getting started</h3>
+		<p>
+			Before you continue you should change the backend layout to a single column in full width - that will make it easier
+			to read this help text and others like it. A few ways you can do this:
+		</p>
+		<ul>
+			<li>
+				Define <code>mod.SHARED.colPos_list = 0</code> in pageTSconfig, OR:
+			</li>
+			<li>
+				Create a Backend Layout record with one column and select it in the <code>Appearance</code> tab of this or a
+				parent page, OR:
+			</li>
+			<li>
+				Edit this or a parent page and select <code>FluidTYPO3 Example: Single Column</code> in the
+				<code>Page Layouts</code> tab and select <code>Fluidpages</code> as value of the <code>Backend Layout</code>
+				selector in the <code>Appearance</code> tab of the same page.
+			</li>
+			<p>
+				Continue reading below once you have done this. Note that each of the methods above are <em>mutually exclusive</em>
+				which means that using one means you cannot use the others (due to the way TYPO3 handles backend layouts).
+			</p>
+		</ul>
+		<p>
+			When you've set this up you are ready to view the explanations which are for the most part available as new content
+			types that you insert.
+		</p>
+		<h3>What to do next?</h3>
+		<ol>
+			<li>
+				To view examples of page templates and backend layouts integrations you must use the <em>third</em> method
+				from the backend layout selection methods above, then select in <code>Page Layouts</code> the example you want.
+			</li>
+			<li>
+				To view examples of how custom content elements work simply add a new content element in any page - the available
+				examples are nicely grouped and each have a description. Insert the element to activate the example and study the
+				<code>Plugin options</code> area for how to use that example.
+			</li>
+			<li>
+				To view examples of how general Flux features work (Flux is the basis of FluidTYPO3 features with the exception
+				of VHS) make instances of content elements from the <code>Flux Examples</code> tab in the new content wizard,
+				like you would do to demonstrate the content element feature.
+			</li>
+			<li>
+				To view examples of backend module implementations and secondary features you must edit the extension configuration
+				of this extension (key: <code>example</code>) by clicking the little gear icon next to it in the Extension Manager.
+				The extension configuration allows toggling examples which cannot or should not be "always on"; what those features
+				do is described next to each toggle.
+			</li>
+		</ol>
+	</div>
+	<code>EXT:example/Resources/Private/Templates/Content/GettingStarted.html</code>
+</f:section>
+
+<f:section name="Main">
+	<h4>FluidTYPO3: Getting Started</h4>
+	<p>View me in the backend to see example</p>
+</f:section>

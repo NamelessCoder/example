@@ -1,0 +1,125 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Configuration">
+	<flux:form id="structure">
+		<flux:form.option name="group">Help</flux:form.option>
+		<flux:form.option name="sorting">10</flux:form.option>
+		<flux:field.custom name="help">
+			<div class="alert alert-danger">
+				Save and close this element to view the help text.
+			</div>
+		</flux:field.custom>
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">FluidTYPO3: Structure</h3>
+		</div>
+		<div class="panel-body">
+			<div class="alert alert-danger">
+				<h4>The "Provider Extension" pattern</h4>
+				<p>
+					In FluidTYPO3, whenever you integrate with a certain feature you do so always from within your own extension.
+					This is a departure from the "old" way of putting template files in <code>fileadmin</code> or elsewhere -
+					it's a pattern you must become familiar with to use FluidTYPO3 - and a pattern that you should also be using
+					when you <em>don't</em> use FluidTYPO3. One of the reasons is to give you a <em>dedicated scope</em> for every
+					asset; there are many others but we won't go into detail here. As you read and use the examples it should
+					quickly become clear to you why an extension as scope is the perfect choice.
+				</p>
+				<p>
+					To illustrate the point: this example extension is for all intents and purposes a proper Provider Extension
+					like you would make yours when you use FluidTYPO3.
+				</p>
+			</div>
+			<p>
+				Your Provider Extension can contain any number of different assets - some have strict rules which should always
+				be respected:
+			</p>
+			<ol>
+				<li>
+					It is mandatory to create a Provider Extension - and it is the only supported approach.
+				</li>
+				<li>
+					Your Provider extension <em>should</em> use a vendor name for classes, if it contains any classes. The vendor
+					is passed to Flux when you register your extension (see for example <code>EXT:example/ext_localconf.php</code>)
+					and gets used when detecting classes, among other things. While it is not mandatory to use a vendor name for
+					general Extbase extensions you should consider it mandatory when integrating with FluidTYPO3. <strong>Do not
+					use our vendor name or that of others - invent your own if you haven't already!</strong>
+				</li>
+				<li>
+					UpperCamelCase is the only supported file format with (almost) no exceptions - when there are exceptions those
+					are imposed by TYPO3 upon extension authors (and you should already be aware of those exceptions).
+				</li>
+				<li>
+					Extension metadata and configuration follows TYPO3 rules, <code>ext_localconf.php</code>,
+					<code>ext_tables.php</code> and so on.
+				</li>
+				<li>
+					Asset locations defined in the Extbase MVC pattern must be respected:
+					<ol>
+						<li>
+							Templates go into <code>Resources/Private/Templates/</code> and each feature is associated with a
+							controller name, e.g. content templates must be in <code>Resources/Private/Templates/Content/</code>.
+						</li>
+						<li>
+							Templates must be in the folder directly under the controller name folder - sub-folders here are not
+							supported (since that would imply an invalid controller- or action name, or sub-packages, neither of
+							which are possible in Flux).
+						</li>
+						<li>
+							Classes go in the usual locations, <code>Controller/</code>, <code>Service/</code> etc. depending on
+							responsibility. We add one convention to the Extbase ones: Provider classes should be put in the
+							<code>Provider/</code> class folder.
+						</li>
+						<li>
+							Language labels go in <code>Resources/Private/Language/locallang.xlf</code> - XLF is mandatory.
+						</li>
+						<li>
+							Public assets go in <code>Resources/Public</code> and are divided into subfolders for
+							<code>Stylesheet/</code>, <code>Javascript/</code>, <code>Icons/</code> and so on.
+						</li>
+					</ol>
+				</li>
+				<li>
+					Configuration files should be put into <code>Configuration/</code> and TypoScript files into
+					<code>Configuration/TypoScript/(setup|constants).txt</code> or subfolders hereof if you need multiple sets.
+					Note that you still need to register/load the TypoScript configurations like you've always done before. We
+					recommend using <code>\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile</code> in
+					<code>ext_tables.php</code> since that gives integrators the greatest control - but you can use the method
+					you prefer (and sometimes there are good reasons for one method over another).
+				</li>
+				<li>
+					Flux resolves template files in <code>templateRootPaths</code> of Provider Extensions (and respects multiple
+					paths to overrule templates like standard Extbase extensions) using the controller name of the individual
+					features (<code>Content</code>, <code>Page</code> and so on).
+				</li>
+				<li>
+					Icons can be resolved for Flux forms (usually there's one form Flux per template you create) if you put the
+					icon files in <code>Resources/Public/Icons/$controller/$templateFileBaseName.(jpg|png|svg|gif)</code> where
+					<code>$controller</code> is the feature you integrate with (<code>Content</code>, <code>Page</code> etc.)
+					and <code>$templateFileBaseName</code> is the filename of your template <em>without</em> the file extension.
+					Valid formats are those listed in the last pattern. If an icon file is not manually defined in the form and
+					one can be detected using the pattern above that icon file gets used automatically.
+				</li>
+				<li>
+					Flux is capable of automatically building LLL references based on the structure of your form, meaning that
+					each field gets a unique LLL reference and all you need to do is add that in your XLF file. Of course you
+					also have the option of manually defining LLL references (using shorthand format for ease) when for example
+					you want to use the same LLL reference for more than one field or just want to have manual control. How this
+					aspect of Flux works is illustrated with an example in <code>Flux: Automatic LLL References</code> which you
+					can insert as a new content element like other examples.
+				</li>
+			</ol>
+		</div>
+	</div>
+	<code>EXT:example/Resources/Private/Templates/Content/Structure.html</code>
+</f:section>
+
+<f:section name="Main">
+	<h4>FluidTYPO3: Getting Started</h4>
+	<p>View me in the backend to see example</p>
+</f:section>

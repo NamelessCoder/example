@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" product-name="example" date="2016-04-12T14:38:32+01:00">
+		<header/>
+		<body>
+			<trans-unit id="flux.form.gettingstarted">
+				<source>FluidTYPO3 Getting Started</source>
+			</trans-unit>
+			<trans-unit id="flux.form.gettingstarted.description">
+				<source>Contains instructions for use and explanations about this extension and FluidTYPO3 features. Insert an instance to view.</source>
+			</trans-unit>
+			<trans-unit id="flux.form.structure">
+				<source>FluidTYPO3 Structure Recommendations</source>
+			</trans-unit>
+			<trans-unit id="flux.form.structure.description">
+				<source>How to structure your custom templates, where to put your files, etc.</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fieldmapping">
+				<source>Flux Field Mapping</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fieldmapping.description">
+				<source>How to map Flux fields' values to record columns (simple value copy)</source>
+			</trans-unit>
+			<trans-unit id="flux.form.contentproviderrecordupdating">
+				<source>Flux Provider: Record Updating</source>
+			</trans-unit>
+			<trans-unit id="flux.form.contentproviderrecordupdating.description">
+				<source>How to use a custom Flux Provider to do record manipulation</source>
+			</trans-unit>
+			<trans-unit id="flux.fieldmapping.fields.tt_content.subheader">
+				<source>Subheader copy field</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
